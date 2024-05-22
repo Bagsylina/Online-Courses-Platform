@@ -1,0 +1,13 @@
+USERNAME,FIRST NAME,LAST NAME,EMAIL,
+GuardiaN,Andrei,Smadu,andrei.smadu@gmail.com
+fasolica,Andrei David,Coman,andrei.coman@gmail.com
+eduard,Eduard,Burlacu,eduard@gmail.com
+
+COURSE ID,COURSE TITLE,COURSE DESCRIPTION,COURSE TAG,
+100,Retele,Curs despre configurarea retelelor folosing Packet Tracer,PROGRAMMING
+
+ACTION,USERNAME,COURSE ID,
+Added a new user,GuardiaN
+Added a new user,fasolica
+Added a new user,eduard
+Added a new course,,100
