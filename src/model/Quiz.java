@@ -27,6 +27,8 @@ public class Quiz extends Lesson{
         this.questions = questions;
     }
 
+    //Quiz is composed of multiple consecutive questions, each with multiple options
+    //Grade calculated by % of correct answers
     @Override
     public int takeLesson() {
         System.out.println(lessonTitle);

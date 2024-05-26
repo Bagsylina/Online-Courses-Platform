@@ -5,7 +5,7 @@ import java.util.List;
 
 //App consists of multiple courses, each with a tag and multiple modules
 public class Course {
-    private int courseId;
+    private final int courseId;
     private String courseTitle;
     private String courseDescription;
     List<Lesson> courseLessons = new ArrayList<>();
@@ -26,10 +26,6 @@ public class Course {
 
     public int getCourseId() {
         return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
     }
 
     public String getCourseTitle() {
@@ -96,6 +92,7 @@ public class Course {
         courseLessons.add(l.copyLesson());
     }
 
+    //adds a new rating to the course
     public void rateCourse(int rate){
         if(rate >= 1 && rate <= 10) {
             courseRating *= numberOfRatings;
