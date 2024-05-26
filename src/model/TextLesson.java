@@ -26,12 +26,13 @@ public class TextLesson extends Lesson {
         this.textBody = textBody;
     }
 
+    //Array of strings, each representing a page
     @Override
     public int takeLesson() {
         System.out.println(lessonTitle);
         System.out.println(lessonDescription);
         for(int i = 0; i < textBody.size(); i++) {
-            System.out.println("page " + i);
+            System.out.println("Page " + i);
             System.out.println(textBody.get(i));
         }
         return 100;

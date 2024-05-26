@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import exceptions.InvalidLessonType;
 
 //Class for a normal website user, has it's contacts, tags marked as favorite for suggesting courses and enrolled courses and their status
 public class User {
@@ -53,7 +54,7 @@ public class User {
     }
 
     //used for enrolling in course
-    public void addCourse(Course course) {
+    public void addCourse(Course course) throws InvalidLessonType {
         enrolledCourses.add(new EnrolledCourse(course));
     }
 

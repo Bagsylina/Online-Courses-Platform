@@ -18,6 +18,8 @@ public class Task extends Lesson{
         this.subtasks = task.subtasks;
     }
 
+    //Task is composed of multiple subtasks that need to be completed in a certain order
+    //Grade is calculated by % of completed subtasks
     @Override
     public int takeLesson() {
         System.out.println(lessonTitle);

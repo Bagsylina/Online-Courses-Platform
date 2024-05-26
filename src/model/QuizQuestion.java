@@ -46,7 +46,7 @@ public class QuizQuestion {
                 return 1;
         }
         else
-            System.out.println("Invalid Answer");
+            System.out.println("Invalid answer");
         return 0;
     }
 }

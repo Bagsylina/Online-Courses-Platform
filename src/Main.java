@@ -1,20 +1,21 @@
+import repository.UserCourses;
+import service.AppService;
 import model.*;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         /*
-        Plarforma de e-learning
-        - Cursuri ce contin lectii si au note
-        - Lectiile pot fi de 4 tipuri: text, video, quiz, task
-        - Nota de la un curs poate fi 70% media lectiilor (50% quiz + 30% task + 20% text/video) + 30% quiz final
-        - Cursurile pot fi de mai multe categorii
-        - Ex. categorii: programming, art, music, cooking, economy, language
-        - Useri multipli, fiecare cu cursurile sale si progresul lor
+        Online Courses Platform
+        - Courses that consist of multiple lsseons and a final quiz
+        - Lessons can be of diferent types: text, video, quiz or task
+        - Course grade si 70% lesson score (50% quizzes + 30% tasks + 20% other) + 30% final quiz
+        - Courses can be of multiple categories (ex.: programming, art, music, cooking, economy, language)
+        - Multiple users, progress for each enrolled lesson is tracked
          */
         AppService app = AppService.getInstance();
+        app.clearDatabase();
         User user1 = new User("GuardiaN", "Andrei", "Smadu", "andrei.smadu@gmail.com", "123456",
                 new ArrayList<>(Arrays.asList(Tag.PROGRAMMING, Tag.MUSIC, Tag.ECONOMY)));
         User user2 = new User("fasolica", "Andrei David", "Coman", "andrei.coman@gmail.com", "123456",
@@ -59,6 +60,8 @@ public class Main {
             System.out.println("9: Get Course");
             System.out.println("10: Get User");
             System.out.println("11: Generate Audit");
+            System.out.println("12: Search Lessons by Tag");
+            System.out.println("13: Courses for all users");
             int chosen = scanner.nextInt();
             switch(chosen) {
                 case 0:
@@ -117,6 +120,19 @@ public class Main {
                     break;
                 case 11:
                     app.generateAudit();
+                    break;
+                case 12:
+                    System.out.println("Enter tag:");
+                    String tagName1 = scanner.next();
+                    Tag tag1 = Tag.valueOf(tagName1);
+                    List<String> lessons = app.getLessonsByTag(tag1);
+                    for(String lesson: lessons)
+                        System.out.println(lesson);
+                    break;
+                case 13:
+                    List<UserCourses> userCourses = app.getUserCourses();
+                    for(UserCourses userCourse: userCourses)
+                        System.out.println(userCourse);
                     break;
                 default:
                     System.out.println("Invalid action");

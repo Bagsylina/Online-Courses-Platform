@@ -2,7 +2,7 @@ package model;
 
 //Base class for all types of lessons
 public class Lesson {
-    protected int lessonId;
+    protected final int lessonId;
     protected String lessonTitle;
     protected String lessonDescription;
 
@@ -22,10 +22,6 @@ public class Lesson {
     //getters and setters
     public int getLessonId() {
         return lessonId;
-    }
-
-    public void setLessonId(int lessonId) {
-        this.lessonId = lessonId;
     }
 
     public String getLessonTitle() {

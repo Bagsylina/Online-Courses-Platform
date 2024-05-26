@@ -1,4 +1,9 @@
-package model;
+package service;
+
+import model.Course;
+import model.Tag;
+import model.User;
+import repository.UserCourses;
 
 import java.util.List;
 
@@ -43,4 +48,13 @@ public interface AppServiceInterface {
 
     //Generate xls file with user and course data and actions taken
     void generateAudit();
+
+    //Using sql to get all lessons from courses with a certain tag
+    List<String> getLessonsByTag(Tag tag);
+
+    //Using sql to get all courses for all users
+    List<UserCourses> getUserCourses();
+
+    //Deletes all rows from all tables in database
+    void clearDatabase();
 }

@@ -23,6 +23,7 @@ public class VideoLesson extends Lesson {
         this.videoLink = videoLink;
     }
 
+    //Link to the video
     @Override
     public int takeLesson() {
         System.out.println(lessonTitle);
