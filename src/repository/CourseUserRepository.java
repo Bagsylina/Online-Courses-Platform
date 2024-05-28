@@ -14,7 +14,7 @@ public class CourseUserRepository implements RepositoryInterface {
     private static final String ADD_COURSE_SQL = "INSERT INTO COURSE(id, title, description, tag) values (?, ?, ?, ?)";
     private static final String ADD_USER_SQL = "INSERT INTO USER(username, firstname, lastname, email) values (?, ?, ?, ?)";
     private static final String ADD_LESSON_SQL = "INSERT INTO LESSON(id, courseid, title, description) values (?, ?, ?, ?)";
-    private static final String ADD_ENROLLEDCOURSE_SQL = "INSERT INTO ENROLLEDCOUSE(courseid, username, score, rating) values (?, ?, 0, 0)";
+    private static final String ADD_ENROLLEDCOURSE_SQL = "INSERT INTO ENROLLEDCOURSE(courseid, username, score, rating) values (?, ?, 0, 0)";
 
     private static final String SET_RATING = "UPDATE ENROLLEDCOURSE SET rating = ? WHERE courseid = ? AND username = ?";
     private static final String SET_SCORE = "UPDATE ENROLLEDCOURSE SET score = ? WHERE courseid = ? AND username = ?";
